@@ -90,3 +90,4 @@ tidyData <- ddply(kdata1, .(id, activity), .fun=function(x){ colMeans(x[,-c(1:2)
 colnames(tidyData)[-c(1:2)] <- paste(colnames(tidyData)[-c(1:2)], "_MEAN", sep="")
 # Save tidy dataset2 into results folder
 saveResult(tidyData,"tidyData")
+write.table(tidyData, "tidyData.txt", sep="\t", row.name=FALSE)
